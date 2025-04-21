@@ -1,0 +1,141 @@
+{
+  "config": "{\"version\":\"5.47\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU08\",\"version\":\"5.47\",\"type\":2},\"customTheme\":{\"name\":\"AccessibleDefault\",\"version\":\"5.47\",\"type\":2}},\"activeSectionIndex\":4,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 1,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "AccessibleDefault",
+            "path": "BuiltInThemes/AccessibleDefault.json",
+            "type": 201
+          },
+          {
+            "name": "CY23SU08",
+            "path": "BaseThemes/CY23SU08.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 3",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "65c2b8bab57ceff99076",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"ba621186e69ef437c44b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.599434391231215,\"y\":0,\"z\":0,\"width\":1268.9037171216798,\"height\":719.2473336906896,\"tabOrder\":0}},{\"id\":1,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":324,\"height\":591,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Series\":[{\"queryRef\":\"Vehicles.Transmission\"}],\"Y\":[{\"queryRef\":\"Sum(Vehicles.CO2 emission)\"}],\"Category\":[{\"queryRef\":\"Vehicles.Powertrain\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Vehicles\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Transmission\"},\"Name\":\"Vehicles.Transmission\",\"NativeReferenceName\":\"Transmission\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"CO2 emission\"}},\"Function\":0},\"Name\":\"Sum(Vehicles.CO2 emission)\",\"NativeReferenceName\":\"CO2 emission\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Powertrain\"},\"Name\":\"Vehicles.Powertrain\",\"NativeReferenceName\":\"Powertrain\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"CO2 emission\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 719.25,
+          "width": 1268.90,
+          "x": 10.60,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 4",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "68389cb924724f9630c3",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"caa071c53b4e02ed0e88\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.599434391231215,\"y\":0,\"z\":0,\"width\":1268.9037171216798,\"height\":719.2473336906896,\"tabOrder\":0}},{\"id\":1,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":324,\"height\":612,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(Vehicles.CO2 emission)\"}],\"Category\":[{\"queryRef\":\"Vehicles.Fuel Type\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Vehicles\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"CO2 emission\"}},\"Function\":0},\"Name\":\"Sum(Vehicles.CO2 emission)\",\"NativeReferenceName\":\"Sum of CO2 emission\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Fuel Type\"},\"Name\":\"Vehicles.Fuel Type\",\"NativeReferenceName\":\"Fuel Type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"CO2 emission\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 719.25,
+          "width": 1268.90,
+          "x": 10.60,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 2",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "6faf94154aa69c8bcc73",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"7af4095c2ffe538e4f1e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.599434391231215,\"y\":0,\"z\":0,\"width\":1268.9037171216798,\"height\":719.2473336906896,\"tabOrder\":0}},{\"id\":1,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":324,\"height\":599,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(Vehicles.CO2 emission)\"}],\"X\":[{\"queryRef\":\"Sum(Vehicles.Engine Size (cm3))\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Vehicles\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"CO2 emission\"}},\"Function\":1},\"Name\":\"Sum(Vehicles.CO2 emission)\",\"NativeReferenceName\":\"Average of CO2 emission\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Engine Size (cm3)\"},\"Name\":\"Sum(Vehicles.Engine Size (cm3))\",\"NativeReferenceName\":\"Engine Size (cm3)\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"trend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayName\":{\"expr\":{\"Literal\":{\"Value\":\"'Trend line 1'\"}}},\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 719.25,
+          "width": 1268.90,
+          "x": 10.60,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectionfb6d554fe01e50469dcc",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"030737acbe5bd8e1ab2b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":124.16480286870852,\"z\":1,\"width\":1279.503151512911,\"height\":595.0825308219811,\"tabOrder\":1}},{\"id\":1,\"position\":{\"x\":0,\"y\":108,\"z\":1,\"width\":324,\"height\":948,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"keyDriversVisual\",\"projections\":{\"Target\":[{\"queryRef\":\"Vehicles.CO2 emission\"}],\"ExplainBy\":[{\"queryRef\":\"Sum(Vehicles.Engine Size (cm3))\"},{\"queryRef\":\"Vehicles.Fuel Type\"},{\"queryRef\":\"Vehicles.Engine Size (cm3) (bins)\"},{\"queryRef\":\"Vehicles.Powertrain\"},{\"queryRef\":\"Vehicles.Transmission\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Vehicles\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"CO2 emission\"},\"Name\":\"Vehicles.CO2 emission\",\"NativeReferenceName\":\"CO2 emission\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Engine Size (cm3)\"}},\"Function\":0},\"Name\":\"Sum(Vehicles.Engine Size (cm3))\",\"NativeReferenceName\":\"Sum of Engine Size (cm3)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Engine Size (cm3) (bins)\"},\"Name\":\"Vehicles.Engine Size (cm3) (bins)\",\"NativeReferenceName\":\"Engine Size (cm3) (bins)\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Fuel Type\"},\"Name\":\"Vehicles.Fuel Type\",\"NativeReferenceName\":\"Fuel Type\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Powertrain\"},\"Name\":\"Vehicles.Powertrain\",\"NativeReferenceName\":\"Powertrain\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Transmission\"},\"Name\":\"Vehicles.Transmission\",\"NativeReferenceName\":\"Transmission\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Engine Size (cm3)\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"keyDrivers\":[{\"properties\":{\"selectedAnalysis\":{\"expr\":{\"Literal\":{\"Value\":\"'keyInfluencers'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 595.08,
+          "width": 1279.50,
+          "x": 0.00,
+          "y": 124.16,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"3140e166130adde8b2d2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":1279.503151512911,\"height\":105.99434391231215,\"tabOrder\":0}},{\"id\":1,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":324,\"height\":100,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(Vehicles.car_id)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Vehicles\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"car_id\"}},\"Function\":5},\"Name\":\"Sum(Vehicles.car_id)\",\"NativeReferenceName\":\"Vehicles Analyzed\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"car_id\"}},\"Function\":5}}}]},\"columnProperties\":{\"Sum(Vehicles.car_id)\":{\"displayName\":\"Vehicles Analyzed\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 105.99,
+          "width": 1279.50,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 5",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "a012eac940fba3bf343b",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"2f5f3b9952599b5f7788\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.599434391231215,\"y\":0,\"z\":0,\"width\":1268.9037171216798,\"height\":719.2473336906896,\"tabOrder\":0}},{\"id\":1,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":324,\"height\":691,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"decompositionTreeVisual\",\"projections\":{\"Analyze\":[{\"queryRef\":\"Sum(Vehicles.CO2 emission)\"}],\"ExplainBy\":[{\"queryRef\":\"Vehicles.Powertrain\",\"active\":true},{\"queryRef\":\"Vehicles.Engine Size (cm3) (bins) 2\",\"active\":true},{\"queryRef\":\"Vehicles.Transmission\",\"active\":true},{\"queryRef\":\"Vehicles.Fuel Type\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Vehicles\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"CO2 emission\"}},\"Function\":1},\"Name\":\"Sum(Vehicles.CO2 emission)\",\"NativeReferenceName\":\"Average of CO2 emission\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Powertrain\"},\"Name\":\"Vehicles.Powertrain\",\"NativeReferenceName\":\"Powertrain\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Transmission\"},\"Name\":\"Vehicles.Transmission\",\"NativeReferenceName\":\"Transmission\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Fuel Type\"},\"Name\":\"Vehicles.Fuel Type\",\"NativeReferenceName\":\"Fuel Type\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Engine Size (cm3) (bins) 2\"},\"Name\":\"Vehicles.Engine Size (cm3) (bins) 2\",\"NativeReferenceName\":\"Engine Size (cm3) (bins) 2\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"CO2 emission\"}},\"Function\":1}}}]},\"expansionStates\":[{\"roles\":[\"ExplainBy\"],\"levels\":[{\"queryRefs\":[\"Vehicles.Powertrain\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Vehicles\"}},\"Property\":\"Powertrain\"}}],\"isPinned\":true},{\"queryRefs\":[\"Vehicles.Engine Size (cm3) (bins) 2\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Vehicles\"}},\"Property\":\"Engine Size (cm3) (bins) 2\"}}],\"isPinned\":true},{\"queryRefs\":[\"Vehicles.Transmission\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Vehicles\"}},\"Property\":\"Transmission\"}}],\"isPinned\":true},{\"queryRefs\":[\"Vehicles.Fuel Type\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Internal Combustion Engine (ICE)'\"}}],\"isToggled\":true,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"0D\"}}],\"isToggled\":true,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Automatic'\"}}],\"isToggled\":true}]}]}]}}],\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 719.25,
+          "width": 1268.90,
+          "x": 10.60,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "AccessibleDefault"
+}

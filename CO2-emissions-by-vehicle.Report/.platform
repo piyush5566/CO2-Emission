@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "CO2-emissions-by-vehicle"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "cdd57dd4-378f-44bb-8e53-12a92201a45a"
+  }
+}

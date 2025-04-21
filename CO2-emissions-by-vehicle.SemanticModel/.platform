@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "CO2-emissions-by-vehicle"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bce27b5b-f5fd-4079-96c8-8ff0e488d5f7"
+  }
+}

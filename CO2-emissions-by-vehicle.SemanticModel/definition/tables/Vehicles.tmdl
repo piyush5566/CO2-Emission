@@ -1,0 +1,175 @@
+table Vehicles
+	lineageTag: 956e8bc4-e933-46c1-b4d4-97be55ad3205
+
+	column car_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d76d0b4-a412-4a84-813b-496a464acd97
+		summarizeBy: sum
+		sourceColumn: car_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Transmission
+		dataType: string
+		lineageTag: 96d17651-3d23-435f-a7ec-853c99376640
+		summarizeBy: none
+		sourceColumn: Transmission
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Engine Size (cm3)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2cf60bff-9b23-406e-b82a-9cc8690592b0
+		summarizeBy: sum
+		sourceColumn: Engine Size (cm3)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Vehicles","TableItemName":"Engine Size (cm3) (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'Fuel Type'
+		dataType: string
+		lineageTag: 9e8ff6c0-075f-466c-904b-a5714f240580
+		summarizeBy: none
+		sourceColumn: Fuel Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Powertrain
+		dataType: string
+		lineageTag: 5e504e0c-ac7d-4b17-9545-e67099b99bbd
+		summarizeBy: none
+		sourceColumn: Powertrain
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CO2 emission'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 11d01dec-8700-4d37-a46e-f80811466976
+		summarizeBy: sum
+		sourceColumn: CO2 emission
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Engine Size (cm3) (bins)' =
+			VAR __Count = 5
+			
+			VAR __Min = MIN('Vehicles'[Engine Size (cm3)])
+			
+			VAR __Max = MAX('Vehicles'[Engine Size (cm3)])
+			
+			VAR __Difference = (__Max - __Min)
+			
+			VAR __Size = IF(__Difference > 0, __Difference / __Count, 1)
+			
+			VAR __BinNumber = INT(('Vehicles'[Engine Size (cm3)] - __Min) / __Size)
+			
+			RETURN
+				IF(
+					ISBLANK('Vehicles'[Engine Size (cm3)]),
+					BLANK(),
+					__Min + (MIN(__BinNumber, __Count - 1) * __Size)
+				)
+		formatString: 0
+		lineageTag: ba022e19-3e46-4213-8ada-d27d7ece027d
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Vehicles"
+				          }
+				        },
+				        "Property": "Engine Size (cm3)"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"v","Entity":"Vehicles"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"v"}},"Property":"Engine Size (cm3)"}}],"BinItem":{"Expression":{"Member":{"Expression":{"Discretize":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"v"}},"Property":"Engine Size (cm3)"}},"Count":5}},"Member":"Min"}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Vehicles","TableItemName":"Engine Size (cm3) (bins) 2","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'Engine Size (cm3) (bins) 2' = ```
+			VAR __Count = 5
+			
+			VAR __Min = MIN('Vehicles'[Engine Size (cm3) (bins)])
+			
+			VAR __Max = MAX('Vehicles'[Engine Size (cm3) (bins)])
+			
+			VAR __Difference = (__Max - __Min)
+			
+			VAR __Size = IF(__Difference > 0, __Difference / __Count, 1)
+			
+			VAR __BinNumber = 
+				IF(
+					ISBLANK('Vehicles'[Engine Size (cm3) (bins)]),
+					BLANK(),
+					ROUNDDOWN(
+						('Vehicles'[Engine Size (cm3) (bins)] - __Min) / __Size,
+						0
+					)
+				)
+			
+			RETURN
+				IF(
+					ISBLANK('Vehicles'[Engine Size (cm3) (bins)]),
+					BLANK(),
+					__Min + (MIN(__BinNumber, __Count - 1) * __Size)
+				)
+			```
+		formatString: 0.00
+		lineageTag: ba3b30b9-b984-425f-a811-b793b8f3b7c1
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Vehicles"
+				          }
+				        },
+				        "Property": "Engine Size (cm3) (bins)"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"v","Entity":"Vehicles"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"v"}},"Property":"Engine Size (cm3) (bins)"}}],"BinItem":{"Expression":{"Member":{"Expression":{"Discretize":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"v"}},"Property":"Engine Size (cm3) (bins)"}},"Count":5}},"Member":"Min"}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Vehicles = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Adventure Works\CO2 emissions by vehicle.csv"),[Delimiter=",", Columns=11, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"car_id", Int64.Type}, {"manufacturer", type text}, {"model", type text}, {"description", type text}, {"transmission", type text}, {"transmission_type", type text}, {"engine_size_cm3", Int64.Type}, {"fuel", type text}, {"powertrain", type text}, {"power_ps", Int64.Type}, {"co2_emissions_gPERkm", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"manufacturer", "Manufacturer"}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Renamed Columns",{{"transmission_type", "Transmission"}, {"engine_size_cm3", "Engine Size (cm3)"}, {"fuel", "Fuel Type"}, {"powertrain", "Powertrain"}, {"power_ps", "Horsepower"}, {"co2_emissions_gPERkm", "CO2 emission"}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns1",{"transmission", "Manufacturer", "model", "description", "Horsepower"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each ([Transmission] <> "Electric - Not Applicable"))
+				in
+				    #"Filtered Rows"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+
